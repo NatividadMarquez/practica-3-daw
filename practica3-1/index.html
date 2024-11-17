@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Practica3 1 - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Practica3 1</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practica-31-instalacion-de-tomcat" class="nav-link">Práctica 3.1: Instalación de Tomcat</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion-e-instalacion-de-tomcat" class="nav-link">Introducción e instalación de tomcat</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#despliegue-manual-mediante-la-gui-de-administracion" class="nav-link">Despliegue Manual Mediante la GUI de Administración</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#despliegue-con-maven" class="nav-link">Despliegue con Maven</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Natividad Márquez Baena</p>
+<h1 id="practica-31-instalacion-de-tomcat">Práctica 3.1: Instalación de Tomcat</h1>
+<ol>
+<li>Introducción e instalación de tomcat</li>
+<li>Despliegue manual mediante la GUI de administración</li>
+<li>Despliegue con Maven
+    3.1 Instalacion de Maven
+    3.2 Configuración de Maven
+    3.3 Despliegue</li>
+</ol>
+<h2 id="introduccion-e-instalacion-de-tomcat">Introducción e instalación de tomcat</h2>
+<p>Esta práctica se centra en el despliegue de aplicaciones en un servidor Tomcat utilizando diferentes métodos, incluyendo el despliegue manual y el automatizado mediante Maven. El entorno que se va a utilizar es Debian 12.
+Se procede a la instalación de Tomcat</p>
+<p><img alt="alt text" src="../image.png" /></p>
+<p>Posteriormente a la configuración de usuarios. Para ello se modifica el archivo <code>tomcat-users.xml</code>, para añadir usuarios y roles necesarios, especialmente:
+Un usuario con rol manager-gui para la administración.
+Un usuario con rol manager-script para despliegues.</p>
+<p><img alt="alt text" src="../image-1.png" /></p>
+<p>Se comprueba el estado del tomcat y se observa activo y funcionando correctamente.</p>
+<p><img alt="alt text" src="../image-2.png" /></p>
+<p>Posteriormente se reinicia el servicio de tomcat para que se apliquen los cambios.</p>
+<h2 id="despliegue-manual-mediante-la-gui-de-administracion">Despliegue Manual Mediante la GUI de Administración</h2>
+<p>Se accede  a la dirección <code>http://localhost:8080/nombre_usuario/html</code>, usando el nombre de usuario y la contraseña que se ha establecido previamente:</p>
+<p><img alt="alt text" src="../image-3.png" />
+Una vez accedemos al tomcat comprobamos su funcionamiento mediante un archivo <code>.war</code>. Sin embargo, el archivo proporcionado no funciona correctamente así que se ha realizado la comprobación con un archivo distinto. El archivo de ejemplo se obtendrá desde la siguiente dirección:
+<code>https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/</code></p>
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p>Se despliega el archivo en tomcat y se comprueba si se ha hecho correctamente.</p>
+<p><img alt="alt text" src="../image-7.png" />
+<img alt="alt text" src="../image-8.png" /></p>
+<h2 id="despliegue-con-maven">Despliegue con Maven</h2>
+<p>Primeramente se instala Maven</p>
+<p><img alt="alt text" src="../image-9.png" /></p>
+<p>Ahora se procederá a añadir un nuevo usuario a al archivo <code>tomcat-users.xml</code> para poder desplegar con Maven. Para ello se modifica el mismo archivo de configuración.</p>
+<p><img alt="alt text" src="../image-11.png" /></p>
+<p>Hecho esto, se procederá a configurar Maven. Para ello, se deberá modificar el archivo <code>settings.xml</code>.</p>
+<p><img alt="alt text" src="../image-12.png" /></p>
+<p>Posteriormente se clona el repositorio de ejemplo que se nos ha facilitado y se procederá a desplegarlo con Maven.</p>
+<p><img alt="alt text" src="../image-13.png" />
+<img alt="alt text" src="../image-14.png" /></p>
+<p>Además se modificará el archivo <code>pom.xml</code> para añadir la configuración, añadiendo cambios dentro de la etiqueta plugin.</p>
+<p><img alt="alt text" src="../image-15.png" /></p>
+<p>Para comprobar que todo funciona correctamente se ejecuta el comando <code>mvn tomcat7:deploy</code>, y esperamos a que nos de como resultado un mensaje de confirmación.</p>
+<p><img alt="alt text" src="../image-16.png" />
+<img alt="alt text" src="../image-17.png" /></p>
+<p>Accediendo de nuevo a la dirección <code>http://localhost:8080/nombre_usuario/</code>, esta vez con el usuario para maven.</p>
+<p><img alt="alt text" src="../image-18.png" /></p>
+<p>Debería de aparecer el directorio y se podrá desplegar:</p>
+<p><img alt="alt text" src="../image-19.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
